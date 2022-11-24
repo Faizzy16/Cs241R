@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CS241 Issuereport</title>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <div class="container issue_list">
+        <h2>SEARCH FOR VACCINATION DATA</h2>
+        <br />
+        <table>
+            <tr>
+                <th>id</th>
+                <th>full name</th>
+                <th>citizen id</th>
+                <th>fathers name</th>
+                <th>address</th>
+                <th>email</th>
+                <th>gender</th>
+                <th>city</th>
+                <th>date of vaccination</th>
+                <th>nearest venue</th>
+                <th> shot type</th>
+                <th>pre medical condition</th>
+            </tr>
+            <th:block th:each="issue : ${vax_data}">
+                <tr>
+                   
+                    <td th:text="${issue.id}">...</td>
+                    <td th:text="${issue.full_name}">...</td>
+                    <td th:text="${issue.c_id}">...</td>
+                    <td th:text="${issue.fathers_name}">...</td>
+                    <td th:text="${issue.address}">...</td>
+                    <td th:text="${issue.email}">...</td>
+                    <td th:text="${issue.gender}">...</td>
+                    <td th:text="${issue.city}">...</td>
+                    <td th:text="${issue.date_of_vaccination}">...</td>
+                    <td th:text="${issue.nearest_venue}">...</td>
+                    <td th:text="${issue.shot_type}">...</td>
+                    <td th:text="${issue.premed_cond}">...</td>
+                </tr>
+            </th:block>
+        </table>
+    </div>
+</body>
+</html>
